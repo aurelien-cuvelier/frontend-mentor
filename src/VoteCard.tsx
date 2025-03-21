@@ -1,7 +1,11 @@
 export default function VoteCard({
-  onClickFunc,
+  onClickRating,
+  onClickSubmit,
+  ratingValue,
 }: {
-  onClickFunc: (rating: number) => void;
+  onClickRating: (rating: number) => void;
+  onClickSubmit: () => void;
+  ratingValue: number;
 }) {
   return (
     <>
@@ -20,15 +24,22 @@ export default function VoteCard({
           return (
             <div
               key={rating}
-              onClick={() => onClickFunc(rating)}
-              className="bg-light-grey/5 w-[50px] h-[50px] hover:bg-white hover:cursor-pointer hover:text-dark-blue active:bg-orange text-light-grey font-bold flex justify-center items-center rounded-full"
+              onClick={() => onClickRating(rating)}
+              className={`bg-light-grey/5 w-[50px] h-[50px] hover:bg-white hover:cursor-pointer hover:text-dark-blue ${
+                ratingValue === rating
+                  ? `bg-orange text-dark-blue`
+                  : ` text-light-grey`
+              }  font-bold flex justify-center items-center rounded-full`}
             >
               {rating}
             </div>
           );
         })}
       </div>
-      <div className="bg-orange h-[40px] w-[100%] hover:bg-white hover:cursor-pointer active:bg-orange rounded-3xl flex justify-center items-center font-bold text-dark-blue">
+      <div
+        onClick={() => onClickSubmit()}
+        className="bg-orange h-[40px] w-[100%] hover:bg-white hover:cursor-pointer active:bg-orange rounded-3xl flex justify-center items-center font-bold text-dark-blue"
+      >
         SUBMIT
       </div>
     </>
