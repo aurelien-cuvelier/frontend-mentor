@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  --bg-mobile: url("./assets/images/background-mobile.png");
+  --bg-tablet: url("./assets/images/background-tablet.png");
+  --bg-desktop: url("./assets/images/background-desktop.png");
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@theme {
+  --font-inconsolata: "Inconsolata", monospace;
+
+  --color-neutral-300: hsl(252, 6%, 83%);
+  --color-neutral-500: hsl(245, 15%, 58%);
+  --color-neutral-700: hsl(245, 19%, 35%);
+  --color-neutral-900: hsl(248, 70%, 10%);
+
+  --color-orange-500: hsl(7, 88%, 67%);
+  --color-orange-700: hsl(7, 71%, 60%);
+
+  --color-gradient-text-start: hsl(7, 86%, 67%);
+  --color-gradient-text-end: hsl(0, 0%, 100%);
+}
